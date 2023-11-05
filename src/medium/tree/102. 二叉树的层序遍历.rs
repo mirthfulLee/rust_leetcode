@@ -34,8 +34,7 @@ impl Solution {
             let cnt = q.len();
             let mut cur_layer: Vec<i32> = Vec::new();
             for _ in 0..cnt {
-                let a = q.pop_front().unwrap();
-                let node = a.borrow();
+                let node = q.pop_front().unwrap().borrow();
                 cur_layer.push(node.val);
                 if let Some(kid) = node.left.clone() {
                     q.push_back(kid.clone());
